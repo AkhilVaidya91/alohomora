@@ -6,7 +6,7 @@ This project involves the development of two machine learning models:
 
 1. **Seller Rating System**: This model assigns a rating between 0 and 5 to each seller based on their historical performance. The ratings are calculated for three target parameters: delivery time, product quality, and cost.
 
-2. **Product Demand Forecasting**: This model predicts the demand for products in the upcoming four weeks using a SARIMAX model, trained on three years of seasonal per-week sales data.
+2. **Product Demand Forecasting**: This model predicts the demand for products in the upcoming four weeks using a SARIMAX model (ARIMA also included for lighter model variation), trained on three years of seasonal per-week sales data.
 
 ## Seller Rating System
 
