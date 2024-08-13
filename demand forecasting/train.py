@@ -23,11 +23,17 @@ def fit_sarimax(data):
     model_fit = model.fit()
     return model_fit
 
+def fit_arima(data):
+    model = sm.tsa.ARIMA(data['sales'], order=(P, D, Q))
+    model_fit = model.fit()
+    return model_fit
+
 def train_model(data_path, sales_col_title):
     csv_name = data_path.split('/')[-1].split('.')[0]
     data = load_data(data_path, sales_col_title)
     model_fit = fit_sarimax(data)
-    pickle.dump(model_fit, open(f'models/{csv_name}.pkl', 'wb'))
+    # model_fit = fit_arima(data)
+    pickle.dump(model_fit, open(f'models/{csv_name}_arima.pkl', 'wb'))
 
 def predict_next_four_weeks(model: SARIMAXResults, start_date: str): ## start_date: 'YYYY-MM-DD'
 
